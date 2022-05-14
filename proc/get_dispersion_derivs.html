@@ -90,13 +90,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.8% of total for procedures.">58 statements</a>
+    title=" 1.6% of total for procedures.">53 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mzero.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/optimizedpower.f90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mzero.f90.html'>mzero.f90</a></li>
-     <li><a href='../module/dftd3_damping_mzero.html'>dftd3_damping_mzero</a></li>
+     <li><a href='../sourcefile/optimizedpower.f90.html'>optimizedpower.f90</a></li>
+     <li><a href='../module/dftd3_damping_optimizedpower.html'>dftd3_damping_optimizedpower</a></li>
      <li class="active">get_dispersion_derivs</li>
   </ol>
 </div>
@@ -137,31 +137,31 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-self~6"></span>class(<a href='../type/mzero_damping_param.html'>mzero_damping_param</a>),</td>
+  <td><span class="anchor" id="variable-self~6"></span>class(<a href='../type/optimizedpower_damping_param.html'>optimizedpower_damping_param</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>self</strong></td><td><p>Damping parameters</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-mol~21"></span>class(structure_type),</td>
+  <td><span class="anchor" id="variable-mol~17"></span>class(structure_type),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>mol</strong></td><td><p>Molecular structure data</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-trans~12"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-trans~8"></span>real(kind=wp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>trans</strong>(:,:)</td><td><p>Lattice points</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-cutoff~14"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-cutoff~10"></span>real(kind=wp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>cutoff</strong></td><td><p>Real space cutoff</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-rvdw~10"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-rvdw~6"></span>real(kind=wp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>rvdw</strong>(:,:)</td><td><p>Van-der-Waals radii for damping function</p></td>
@@ -173,37 +173,37 @@
   <td><strong>r4r2</strong>(:)</td><td><p>Expectation values for C8 extrapolation</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-c6~13"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-c6~9"></span>real(kind=wp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>c6</strong>(:,:)</td><td><p>C6 coefficients for all atom pairs.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-dc6dcn~6"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-dc6dcn~4"></span>real(kind=wp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>dc6dcn</strong>(:,:)</td><td><p>Derivative of the C6 w.r.t. the coordination number</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-energy~15"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-energy~11"></span>real(kind=wp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>energy</strong>(:)</td><td><p>Dispersion energy</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-dedcn~7"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-dedcn~5"></span>real(kind=wp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>dEdcn</strong>(:)</td><td><p>Derivative of the energy w.r.t. the coordination number</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-gradient~12"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-gradient~10"></span>real(kind=wp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>gradient</strong>(:,:)</td><td><p>Dispersion gradient</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-sigma~12"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-sigma~10"></span>real(kind=wp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>sigma</strong>(:,:)</td><td><p>Dispersion virial</p></td>
@@ -241,7 +241,7 @@
 <span class="w">      </span><span class="p">&amp;</span><span class="w"> </span><span class="n">energy</span><span class="p">,</span><span class="w"> </span><span class="n">dEdcn</span><span class="p">,</span><span class="w"> </span><span class="n">gradient</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="p">)</span><span class="w"></span>
 
 <span class="w">   </span><span class="c">!&gt; Damping parameters</span>
-<span class="w">   </span><span class="k">class</span><span class="p">(</span><span class="n">mzero_damping_param</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">self</span><span class="w"></span>
+<span class="w">   </span><span class="k">class</span><span class="p">(</span><span class="n">optimizedpower_damping_param</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">self</span><span class="w"></span>
 
 <span class="w">   </span><span class="c">!&gt; Molecular structure data</span>
 <span class="w">   </span><span class="k">class</span><span class="p">(</span><span class="n">structure_type</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mol</span><span class="w"></span>
@@ -277,47 +277,38 @@
 <span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sigma</span><span class="p">(:,</span><span class="w"> </span><span class="p">:)</span><span class="w"></span>
 
 <span class="w">   </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iat</span><span class="p">,</span><span class="w"> </span><span class="n">jat</span><span class="p">,</span><span class="w"> </span><span class="n">izp</span><span class="p">,</span><span class="w"> </span><span class="n">jzp</span><span class="p">,</span><span class="w"> </span><span class="n">jtr</span><span class="w"></span>
-<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r6</span><span class="p">,</span><span class="w"> </span><span class="n">r8</span><span class="p">,</span><span class="w"> </span><span class="n">t6</span><span class="p">,</span><span class="w"> </span><span class="n">t8</span><span class="p">,</span><span class="w"> </span><span class="n">d6</span><span class="p">,</span><span class="w"> </span><span class="n">d8</span><span class="p">,</span><span class="w"> </span><span class="n">f6</span><span class="p">,</span><span class="w"> </span><span class="n">f8</span><span class="p">,</span><span class="w"> </span><span class="n">alp6</span><span class="p">,</span><span class="w"> </span><span class="n">alp8</span><span class="w"></span>
-<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">edisp</span><span class="p">,</span><span class="w"> </span><span class="n">gdisp</span><span class="p">,</span><span class="w"> </span><span class="n">cutoff2</span><span class="p">,</span><span class="w"> </span><span class="n">r0ij</span><span class="p">,</span><span class="w"> </span><span class="n">rrij</span><span class="p">,</span><span class="w"> </span><span class="n">c6ij</span><span class="p">,</span><span class="w"> </span><span class="n">dE</span><span class="p">,</span><span class="w"> </span><span class="n">dG</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">dS</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="n">cutoff2</span><span class="p">,</span><span class="w"> </span><span class="n">r0ij</span><span class="p">,</span><span class="w"> </span><span class="n">rrij</span><span class="p">,</span><span class="w"> </span><span class="n">c6ij</span><span class="p">,</span><span class="w"> </span><span class="n">t6</span><span class="p">,</span><span class="w"> </span><span class="n">t8</span><span class="p">,</span><span class="w"> </span><span class="n">d6</span><span class="p">,</span><span class="w"> </span><span class="n">d8</span><span class="p">,</span><span class="w"> </span><span class="n">edisp</span><span class="p">,</span><span class="w"> </span><span class="n">gdisp</span><span class="w"></span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dE</span><span class="p">,</span><span class="w"> </span><span class="n">dG</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">dS</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">rb</span><span class="p">,</span><span class="w"> </span><span class="n">ab</span><span class="w"></span>
 
 <span class="w">   </span><span class="n">cutoff2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cutoff</span><span class="o">*</span><span class="n">cutoff</span><span class="w"></span>
-<span class="w">   </span><span class="n">alp6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">alp</span><span class="w"></span>
-<span class="w">   </span><span class="n">alp8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">alp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2.0_wp</span><span class="w"></span>
 
 <span class="w">   </span><span class="c">!$omp parallel do schedule(runtime) default(none) &amp;</span>
 <span class="w">   </span><span class="c">!$omp reduction(+:energy, gradient, sigma, dEdcn) &amp;</span>
-<span class="w">   </span><span class="c">!$omp shared(mol, self, c6, dc6dcn, trans, cutoff2, alp6, alp8, rvdw, r4r2) &amp;</span>
-<span class="w">   </span><span class="c">!$omp private(iat, jat, izp, jzp, jtr, vec, r2, r1, r6, r8, t6, t8, d6, &amp;</span>
-<span class="w">   </span><span class="c">!$omp&amp; d8, f6, f8, edisp, gdisp, r0ij, rrij, c6ij, dE, dG, dS)</span>
+<span class="w">   </span><span class="c">!$omp shared(mol, self, c6, dc6dcn, trans, cutoff2, r4r2) &amp;</span>
+<span class="w">   </span><span class="c">!$omp private(iat, jat, izp, jzp, jtr, vec, r2, r0ij, rrij, c6ij, t6, t8, &amp;</span>
+<span class="w">   </span><span class="c">!$omp&amp; d6, d8, edisp, gdisp, dE, dG, dS, rb, ab)</span>
 <span class="w">   </span><span class="k">do </span><span class="n">iat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mol</span><span class="p">%</span><span class="n">nat</span><span class="w"></span>
 <span class="w">      </span><span class="n">izp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mol</span><span class="p">%</span><span class="n">id</span><span class="p">(</span><span class="n">iat</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="k">do </span><span class="n">jat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">iat</span><span class="w"></span>
 <span class="w">         </span><span class="n">jzp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mol</span><span class="p">%</span><span class="n">id</span><span class="p">(</span><span class="n">jat</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="n">rrij</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">r4r2</span><span class="p">(</span><span class="n">izp</span><span class="p">)</span><span class="o">*</span><span class="n">r4r2</span><span class="p">(</span><span class="n">jzp</span><span class="p">)</span><span class="w"></span>
-<span class="w">         </span><span class="n">r0ij</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rvdw</span><span class="p">(</span><span class="n">jzp</span><span class="p">,</span><span class="w"> </span><span class="n">izp</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="n">r0ij</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">a1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">rrij</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">a2</span><span class="w"></span>
 <span class="w">         </span><span class="n">c6ij</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c6</span><span class="p">(</span><span class="n">jat</span><span class="p">,</span><span class="w"> </span><span class="n">iat</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="k">do </span><span class="n">jtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="n">vec</span><span class="p">(:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mol</span><span class="p">%</span><span class="n">xyz</span><span class="p">(:,</span><span class="w"> </span><span class="n">iat</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">mol</span><span class="p">%</span><span class="n">xyz</span><span class="p">(:,</span><span class="w"> </span><span class="n">jat</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trans</span><span class="p">(:,</span><span class="w"> </span><span class="n">jtr</span><span class="p">))</span><span class="w"></span>
 <span class="w">            </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">vec</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">vec</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">cutoff2</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nb">epsilon</span><span class="p">(</span><span class="mf">1.0_wp</span><span class="p">))</span><span class="w"> </span><span class="k">cycle</span>
-<span class="k">            </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">            </span><span class="n">r6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2</span><span class="o">*</span><span class="n">r2</span><span class="o">*</span><span class="n">r2</span><span class="w"></span>
-<span class="w">            </span><span class="n">r8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r6</span><span class="o">*</span><span class="n">r2</span><span class="w"></span>
+<span class="k">            </span><span class="n">rb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r2</span><span class="o">**</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="mf">0.5_wp</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r0ij</span><span class="o">**</span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="w"></span>
+<span class="w">            </span><span class="n">t6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rb</span><span class="o">/</span><span class="p">(</span><span class="n">rb</span><span class="o">*</span><span class="n">r2</span><span class="o">**</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ab</span><span class="o">*</span><span class="n">r0ij</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">t8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rb</span><span class="o">/</span><span class="p">(</span><span class="n">rb</span><span class="o">*</span><span class="n">r2</span><span class="o">**</span><span class="mi">4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ab</span><span class="o">*</span><span class="n">r0ij</span><span class="o">**</span><span class="mi">8</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">            </span><span class="n">t6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">r1</span><span class="o">/</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">rs6</span><span class="o">*</span><span class="n">r0ij</span><span class="p">)</span><span class="o">+</span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="n">r0ij</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">alp6</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="n">t8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">r1</span><span class="o">/</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">rs8</span><span class="o">*</span><span class="n">r0ij</span><span class="p">)</span><span class="o">+</span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="n">r0ij</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">alp8</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">d6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="n">r2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">t6</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="n">ab</span><span class="o">*</span><span class="n">r0ij</span><span class="o">**</span><span class="mi">6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t6</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">rb</span><span class="o">*</span><span class="n">r2</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">d8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">r2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">t8</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="n">ab</span><span class="o">*</span><span class="n">r0ij</span><span class="o">**</span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t8</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">rb</span><span class="o">*</span><span class="n">r2</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">            </span><span class="n">f6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_wp</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0_wp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">6.0_wp</span><span class="o">*</span><span class="n">t6</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="n">f8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_wp</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0_wp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">6.0_wp</span><span class="o">*</span><span class="n">t8</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">d6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">6.0_wp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f6</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">               </span><span class="p">&amp;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">6.0_wp</span><span class="o">*</span><span class="n">alp6</span><span class="o">*</span><span class="n">t6</span><span class="o">*</span><span class="n">f6</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">r2</span><span class="o">+</span><span class="n">self</span><span class="p">%</span><span class="n">rs6</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="n">r0ij</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r1</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="n">d8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">8.0_wp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">               </span><span class="p">&amp;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">6.0_wp</span><span class="o">*</span><span class="n">alp8</span><span class="o">*</span><span class="n">t8</span><span class="o">*</span><span class="n">f8</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">r2</span><span class="o">+</span><span class="n">self</span><span class="p">%</span><span class="n">rs8</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">bet</span><span class="o">*</span><span class="n">r0ij</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r1</span><span class="p">)</span><span class="w"></span>
-
-<span class="w">            </span><span class="n">edisp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f6</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rrij</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r8</span><span class="w"></span>
-<span class="w">            </span><span class="n">gdisp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d6</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rrij</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r8</span><span class="w"></span>
+<span class="w">            </span><span class="n">edisp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s6</span><span class="o">*</span><span class="n">t6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s8</span><span class="o">*</span><span class="n">rrij</span><span class="o">*</span><span class="n">t8</span><span class="w"></span>
+<span class="w">            </span><span class="n">gdisp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s6</span><span class="o">*</span><span class="n">d6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">self</span><span class="p">%</span><span class="n">s8</span><span class="o">*</span><span class="n">rrij</span><span class="o">*</span><span class="n">d8</span><span class="w"></span>
 
 <span class="w">            </span><span class="n">dE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">c6ij</span><span class="o">*</span><span class="n">edisp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5_wp</span><span class="w"></span>
 <span class="w">            </span><span class="n">dG</span><span class="p">(:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">c6ij</span><span class="o">*</span><span class="n">gdisp</span><span class="o">*</span><span class="n">vec</span><span class="w"></span>
@@ -358,7 +349,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-04 11:01            </p>
+ on 2022-05-14 10:23            </p>
         </div>
       </div>
       <br>

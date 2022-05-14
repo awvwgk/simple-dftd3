@@ -92,11 +92,11 @@
     data-placement="bottom" data-html="true"
     title=" 0.7% of total for procedures.">22 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/optimizedpower.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/zero.f90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/optimizedpower.f90.html'>optimizedpower.f90</a></li>
-     <li><a href='../module/dftd3_damping_optimizedpower.html'>dftd3_damping_optimizedpower</a></li>
+     <li><a href='../sourcefile/zero.f90.html'>zero.f90</a></li>
+     <li><a href='../module/dftd3_damping_zero.html'>dftd3_damping_zero</a></li>
      <li class="active">get_dispersion2</li>
   </ol>
 </div>
@@ -137,7 +137,7 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-self~18"></span>class(<a href='../type/optimizedpower_damping_param.html'>optimizedpower_damping_param</a>),</td>
+  <td><span class="anchor" id="variable-self~18"></span>class(<a href='../type/zero_damping_param.html'>zero_damping_param</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>self</strong></td><td><p>Damping parameters</p></td>
@@ -241,7 +241,7 @@
 <span class="w">      </span><span class="p">&amp;</span><span class="w"> </span><span class="n">energy</span><span class="p">,</span><span class="w"> </span><span class="n">dEdcn</span><span class="p">,</span><span class="w"> </span><span class="n">gradient</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="p">)</span><span class="w"></span>
 
 <span class="w">   </span><span class="c">!&gt; Damping parameters</span>
-<span class="w">   </span><span class="k">class</span><span class="p">(</span><span class="n">optimizedpower_damping_param</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">self</span><span class="w"></span>
+<span class="w">   </span><span class="k">class</span><span class="p">(</span><span class="n">zero_damping_param</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">self</span><span class="w"></span>
 
 <span class="w">   </span><span class="c">!&gt; Molecular structure data</span>
 <span class="w">   </span><span class="k">class</span><span class="p">(</span><span class="n">structure_type</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mol</span><span class="w"></span>
@@ -284,7 +284,7 @@
 
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">grad</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">      call </span><span class="n">get_dispersion_derivs</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">mol</span><span class="p">,</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="n">cutoff</span><span class="p">,</span><span class="w"> </span><span class="n">rvdw</span><span class="p">,</span><span class="w"> </span><span class="n">r4r2</span><span class="p">,</span><span class="w"> </span><span class="n">c6</span><span class="p">,</span><span class="w"> </span><span class="n">dc6dcn</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">         </span><span class="p">&amp;</span><span class="w"> </span><span class="n">energy</span><span class="p">,</span><span class="w"> </span><span class="n">dEdcn</span><span class="p">,</span><span class="w"> </span><span class="n">gradient</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">&amp;</span><span class="w"> </span><span class="n">energy</span><span class="p">,</span><span class="w"> </span><span class="n">dEdcn</span><span class="p">,</span><span class="w"> </span><span class="n">gradient</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="p">)</span><span class="w"></span>
 <span class="w">   </span><span class="k">else</span>
 <span class="k">      call </span><span class="n">get_dispersion_energy</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">mol</span><span class="p">,</span><span class="w"> </span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="n">cutoff</span><span class="p">,</span><span class="w"> </span><span class="n">rvdw</span><span class="p">,</span><span class="w"> </span><span class="n">r4r2</span><span class="p">,</span><span class="w"> </span><span class="n">c6</span><span class="p">,</span><span class="w"> </span><span class="n">energy</span><span class="p">)</span><span class="w"></span>
 <span class="w">   </span><span class="k">end if</span>
@@ -310,7 +310,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-04 11:01            </p>
+ on 2022-05-14 10:23            </p>
         </div>
       </div>
       <br>
