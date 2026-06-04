@@ -161,8 +161,20 @@ def set_model_realspace_cutoff(
     width3: float = 0.0,
 ) -> None:
     """Set the realspace cutoff for the dispersion model"""
-    return error_check(lib.dftd3_set_model_realspace_cutoff_smooth)(
+    error_check(lib.dftd3_set_model_realspace_cutoff_smooth)(
         disp.handle, disp2, disp3, cn, width2, width3
+    )
+
+
+def set_model_ghost_index(disp: ModelHandle, ghost: np.ndarray) -> None:
+    """Disable dispersion contributions from selected atoms."""
+    if ghost is None:
+        return
+    indices = np.ascontiguousarray(ghost, dtype="i4")
+    error_check(lib.dftd3_set_model_ghost_index)(
+        disp.handle,
+        _cast("int*", indices),
+        indices.size,
     )
 
 
