@@ -17,6 +17,10 @@
 os = host_machine.system()
 fc = meson.get_compiler('fortran')
 fc_id = fc.get_id()
+cc = fc
+if has_cc
+  cc = meson.get_compiler('c')
+endif
 
 if fc_id == 'gcc'
   add_project_arguments(
@@ -24,6 +28,18 @@ if fc_id == 'gcc'
     '-fbacktrace',
     language: 'fortran',
   )
+  if os == 'linux'
+    lib_deps += cc.find_library('gfortran')
+    quadmath_dep = cc.find_library('quadmath', required: false)
+    if quadmath_dep.found()
+        lib_deps += quadmath_dep
+    endif
+    mvec_dep = cc.find_library('mvec', required: false)
+    if mvec_dep.found()
+        lib_deps += mvec_dep
+    endif
+    lib_deps += cc.find_library('m')
+  endif
 elif fc_id == 'intel'
   add_project_arguments(
     '-traceback',
