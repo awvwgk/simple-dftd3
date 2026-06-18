@@ -6,3 +6,4 @@ numpy
 ase
 cffi
 qcelemental
+pyscf
