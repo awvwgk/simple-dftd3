@@ -1,9 +1,0 @@
-sphinx-book-theme
-sphinx-copybutton
-sphinx-design
-sphinxcontrib-bibtex
-numpy
-ase
-cffi
-qcelemental
-pyscf
